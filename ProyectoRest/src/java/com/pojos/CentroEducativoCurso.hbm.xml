@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-sep-2016 0:33:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojos.CentroEducativoCurso" table="centro_educativo_curso" schema="dbo" catalog="PABREC" optimistic-lock="version">
+        <id name="idCentroEducativoCurso" type="int">
+            <column name="idCentro_educativo_curso" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="centroEducativo" class="com.pojos.CentroEducativo" fetch="select">
+            <column name="fk_centro_educativo" not-null="true" />
+        </many-to-one>
+        <many-to-one name="curso" class="com.pojos.Curso" fetch="select">
+            <column name="fk_curso" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -7,7 +7,7 @@ package com.helper;
 
 import com.google.gson.Gson;
 import com.pojos.Persona;
-import com.utility.NewHibernateUtil;
+import com.utility.HibernateUtil;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -29,7 +29,7 @@ public class PersonaHelper {
     }
     
     public List<Persona> personaList(){
-        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         Query q = session.createSQLQuery("Select * from Persona").setResultTransformer(Transformers.aliasToBean(Persona.class));
         List<Persona> resultList=q.list();
@@ -40,7 +40,7 @@ public class PersonaHelper {
     
     public String personaId(int idPersona){
         Gson gson = new Gson();
-        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         Persona persona = new Persona();
         Query q = session.createSQLQuery("Select * from Persona where idPersona = " + idPersona );
@@ -50,7 +50,7 @@ public class PersonaHelper {
     }
     
     public void savePersona(String nombre, String apellidoPat,String apellidoMat,Date fechaNac){
-        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         
         Query query = session.createSQLQuery("Insert into persona (nombre,apellidoPat,apellidoMat,fechaNac) values (:nombre, :apellidoPat, :apellidoMat, :fechaNac)");
@@ -64,7 +64,7 @@ public class PersonaHelper {
     }
     
     public void updatePersona(int personaId,String name){
-        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         Query q = session.createSQLQuery("update persona set nombre='"+name+"' where idPersona="+personaId);
         q.executeUpdate();
@@ -73,7 +73,7 @@ public class PersonaHelper {
     }
     
     public void deletePersona(int personaId){
-        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         Query q = session.createSQLQuery("delete from persona where idPersona="+personaId);
         q.executeUpdate();

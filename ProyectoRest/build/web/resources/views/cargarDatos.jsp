@@ -58,6 +58,7 @@
                 </div>
             </div>
             <button ng-click="getSession()">GetSession</button>
+            <button class="btn btn-info">Ver Modelo De Datos</button>
         </form>        
     </div>
 </body>

@@ -1,15 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 01-sep-2016 21:52:11 by Hibernate Tools 4.3.1 -->
+<!-- Generated 22-sep-2016 0:33:41 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.pojos.Persona" table="persona" schema="dbo" catalog="PABREC" optimistic-lock="version">
         <id name="idPersona" type="int">
             <column name="idPersona" />
             <generator class="assigned" />
         </id>
+        <many-to-one name="tipoPersona" class="com.pojos.TipoPersona" fetch="select">
+            <column name="fk_tipo_persona" not-null="true" />
+        </many-to-one>
         <property name="nombre" type="string">
-            <column name="nombre" length="75" not-null="true" />
+            <column name="nombre" length="50" not-null="true" />
         </property>
         <property name="apellidoPat" type="string">
             <column name="apellidoPat" length="50" />
@@ -20,5 +23,23 @@
         <property name="fechaNac" type="timestamp">
             <column name="fechaNac" length="23" />
         </property>
+        <property name="sexo" type="string">
+            <column name="sexo" length="1" />
+        </property>
+        <property name="correoElectronico" type="string">
+            <column name="correoElectronico" length="100" not-null="true" />
+        </property>
+        <property name="telefono" type="java.lang.Integer">
+            <column name="telefono" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="150" />
+        </property>
+        <set name="usuarios" table="usuario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fk_persona" />
+            </key>
+            <one-to-many class="com.pojos.Usuario" />
+        </set>
     </class>
 </hibernate-mapping>

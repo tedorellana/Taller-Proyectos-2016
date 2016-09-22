@@ -1,18 +1,36 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 01-sep-2016 21:52:11 by Hibernate Tools 4.3.1 -->
+<!-- Generated 22-sep-2016 0:33:41 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.pojos.Usuario" table="usuario" schema="dbo" catalog="PABREC" optimistic-lock="version">
         <id name="idUsuario" type="int">
             <column name="idUsuario" />
             <generator class="assigned" />
         </id>
+        <many-to-one name="persona" class="com.pojos.Persona" fetch="select">
+            <column name="fk_persona" />
+        </many-to-one>
+        <many-to-one name="tipoUsuario" class="com.pojos.TipoUsuario" fetch="select">
+            <column name="fk_tipo_usuario" not-null="true" />
+        </many-to-one>
         <property name="nombre" type="string">
-            <column name="nombre" length="75" not-null="true" />
+            <column name="nombre" length="50" not-null="true" />
         </property>
-        <property name="contrase&#241;a" type="string">
-            <column name="contrase&#241;a" length="75" not-null="true" />
+        <property name="contrasena" type="string">
+            <column name="contrasena" length="50" not-null="true" />
         </property>
+        <set name="comentarios" table="comentario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fk_usuario" not-null="true" />
+            </key>
+            <one-to-many class="com.pojos.Comentario" />
+        </set>
+        <set name="centroEducativos" table="centroEducativo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fk_usuario" />
+            </key>
+            <one-to-many class="com.pojos.CentroEducativo" />
+        </set>
     </class>
 </hibernate-mapping>

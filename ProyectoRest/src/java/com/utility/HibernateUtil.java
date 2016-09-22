@@ -14,21 +14,8 @@ import org.hibernate.SessionFactory;
  *
  * @author TED
  */
-public class NewHibernateUtil {
+public class HibernateUtil {
 
-    /*
-    <script>
-  angular.module('bindExample', [])
-    .controller('ExampleController', ['$scope', function($scope) {
-      $scope.name = 'Whirled';
-    }]);
-</script>
-<div ng-controller="ExampleController">
-  <label>Enter name: <input type="text" ng-model="name"></label><br>
-  Hello <span ng-bind="name"></span>!
-</div>
-    */
-    
     private static final SessionFactory sessionFactory;
     
     static {
