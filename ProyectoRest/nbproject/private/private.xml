@@ -3,13 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/2016%20-%20II/Taller%20de%20Proyectos%20Gerencia/TP-%202016%20Proyecto/Taller-Proyectos-2016/ProyectoRest/src/java/hibernate.cfg.xml</file>
-            <file>file:/E:/2016%20-%20II/Taller%20de%20Proyectos%20Gerencia/TP-%202016%20Proyecto/Taller-Proyectos-2016/ProyectoRest/src/java/com/pojos/Persona.java</file>
-            <file>file:/E:/2016%20-%20II/Taller%20de%20Proyectos%20Gerencia/TP-%202016%20Proyecto/Taller-Proyectos-2016/ProyectoRest/src/java/com/helper/UsuarioHelper.java</file>
-            <file>file:/E:/2016%20-%20II/Taller%20de%20Proyectos%20Gerencia/TP-%202016%20Proyecto/Taller-Proyectos-2016/ProyectoRest/src/java/com/helper/PersonaHelper.java</file>
-            <file>file:/E:/2016%20-%20II/Taller%20de%20Proyectos%20Gerencia/TP-%202016%20Proyecto/Taller-Proyectos-2016/ProyectoRest/src/java/com/rest/PersonaResource.java</file>
-            <file>file:/E:/2016%20-%20II/Taller%20de%20Proyectos%20Gerencia/TP-%202016%20Proyecto/Taller-Proyectos-2016/ProyectoRest/src/java/hibernate.reveng.xml</file>
-            <file>file:/E:/2016%20-%20II/Taller%20de%20Proyectos%20Gerencia/TP-%202016%20Proyecto/Taller-Proyectos-2016/ProyectoRest/src/java/com/utility/HibernateUtil.java</file>
+            <file>file:/D:/URP/Repositorio%20TP%202016/Taller-Proyectos-2016/ProyectoRest/src/java/hibernate.cfg.xml</file>
+            <file>file:/D:/URP/Repositorio%20TP%202016/Taller-Proyectos-2016/ProyectoRest/web/META-INF/context.xml</file>
         </group>
     </open-files>
 </project-private>
